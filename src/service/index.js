@@ -1,38 +1,38 @@
-import request from 'utils/request'
-import { apiPrefix } from 'utils/config'
+// import qs from 'qs'
+import callApi from './api'
 
-import api from './api'
+// const getPosts = (identifier = 'getPosts') => callApi({
+//   url: '/posts',
+//   method: 'get',
+//   identifier,
+// })
 
-const gen = params => {
-  let url = apiPrefix + params
-  let method = 'GET'
 
-  const paramsArray = params.split(' ')
-  if (paramsArray.length === 2) {
-    method = paramsArray[0]
-    url = apiPrefix + paramsArray[1]
-  }
+// export default  function getPosts1 = () => callApi({
+//   url: '/posts',
+//   method: 'get',
+// })
 
-  return function(data) {
-    return request({
-      url,
-      data,
-      method,
-    })
-  }
-}
+// // export default  function getPosts() {
+// //    (callApi({
+// //     url: '/posts',
+// //     method: 'get',
+// //   }))
+// // }
 
-const APIFunction = {}
-for (const key in api) {
-  APIFunction[key] = gen(api[key])
-}
+// export default async function getPosts() {
+//    callApi({
+//     url: '/posts',
+//     method: 'get',
+//   })
+// }
+// // export default {
+// //   getPosts
+// // }
 
-APIFunction.queryWeather = params => {
-  params.key = 'i7sau1babuzwhycn'
-  return request({
-    url: `${apiPrefix}/weather/now.json`,
-    data: params,
-  })
-}
 
-export default APIFunction
+const getPosts = () =>  callApi({
+  url: '/posts',
+  method: 'get',
+});
+export default getPosts;

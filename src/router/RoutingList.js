@@ -23,6 +23,7 @@ const routes = [
 
 function RoutingList() {
   return routes.map(item => {
+    console.log('item',item.path.split('/'),item,item.path.split('/').length)
     if (item.path.split('/').length === 2) {
       return (
         <Route
