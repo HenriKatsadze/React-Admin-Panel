@@ -48,18 +48,6 @@ export default function HeaderMenu(props) {
   );
 
   const rightContent = [
-    // <Menu key="user" style={{ backgroundColor: headerColor, color: 'white' }} >
-    //     <SubMenu
-    //         title={
-    //             <Dropdown overlay={menu}>
-    //                 <a style={{ color: 'white' }}>
-    //                     Hover me <DownOutlined />
-    //                 </a>
-    //             </Dropdown>
-    //         }
-    //     >
-    //     </SubMenu>
-    // </Menu>
     <Dropdown key="user" overlay={menu} className="dropdown">
       <a style={{ color: "white" }}>
         Username <UserOutlined />
